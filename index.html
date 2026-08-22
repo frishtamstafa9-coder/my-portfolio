@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Frishta M. Khder | UI/UX &amp; Graphic Designer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#020617",
+                "surface-variant": "#273647",
+                "surface-bright": "#2c3a4c",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "primary-container": "#020617",
+                "tertiary": "#c0c1ff",
+                "secondary-container": "#3f465c",
+                "surface-tint": "#c0c6de",
+                "error": "#ffb4ab",
+                "on-secondary-fixed": "#131b2e",
+                "on-tertiary-container": "#6467f2",
+                "primary": "#c0c6de",
+                "error-container": "#93000a",
+                "secondary": "#bec6e0",
+                "secondary-fixed": "#dae2fd",
+                "surface-container-high": "#1c2b3c",
+                "on-secondary": "#283044",
+                "tertiary-fixed": "#e1e0ff",
+                "primary-fixed-dim": "#c0c6de",
+                "on-primary": "#2a3043",
+                "background": "#020617",
+                "inverse-primary": "#585e73",
+                "inverse-surface": "#d4e4fa",
+                "tertiary-container": "#01002e",
+                "on-error-container": "#ffdad6",
+                "surface-container": "#122131",
+                "primary-fixed": "#dce1fb",
+                "on-surface-variant": "#c6c6cd",
+                "outline": "#909097",
+                "surface-container-highest": "#273647",
+                "on-error": "#690005",
+                "on-tertiary": "#1000a9",
+                "on-background": "#d4e4fa",
+                "surface-container-lowest": "#010f1f",
+                "secondary-fixed-dim": "#bec6e0",
+                "surface-dim": "#020617",
+                "on-surface": "#d4e4fa",
+                "on-primary-container": "#72778d",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-secondary-container": "#adb4ce",
+                "on-secondary-fixed-variant": "#3f465c",
+                "outline-variant": "#46464c",
+                "on-primary-fixed-variant": "#40465a",
+                "surface-container-low": "#0d1c2d",
+                "inverse-on-surface": "#233143",
+                "on-primary-fixed": "#151b2d",
+                "on-tertiary-fixed": "#07006c"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "stack-lg": "4rem",
+                "stack-md": "1.5rem",
+                "container-max": "1280px",
+                "margin-mobile": "1rem",
+                "stack-sm": "0.5rem",
+                "section-padding": "8rem",
+                "gutter": "2rem"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "label-sm": ["Geist"],
+                "headline-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.75", "fontWeight": "400"}],
+                "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #020617;
+            color: #d4e4fa;
+            scroll-behavior: smooth;
+            text-align: left;
+        }
+        .section-divider {
+            border-bottom: 1px solid rgba(144, 144, 151, 0.15);
+            padding-bottom: 4rem;
+            margin-bottom: 0;
+        }
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #c0c1ff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        audio::-webkit-media-controls-panel { background-color: #1c2b3c; }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display { color: #d4e4fa; }
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-mute-button {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            inset: 0;
+            background: rgba(1, 15, 31, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .modal.active {
+            display: flex !important;
+        }
+        .bg-obsidian { background-color: #020617; }
+        .bg-slate-tint { background-color: #0d1c2d; }
+
+        @media (max-width: 768px) {
+            .mobile-scaled-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 0.75rem !important;
+            }
+            .mobile-scaled-video-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 0.5rem !important;
+            }
+            .mobile-scaled-text-xs {
+                font-size: 0.65rem !important;
+                line-height: 1.1 !important;
+            }
+            .mobile-scaled-text-sm {
+                font-size: 0.75rem !important;
+                line-height: 1.2 !important;
+            }
+            .mobile-scaled-h3 {
+                font-size: 0.75rem !important;
+                line-height: 1.2 !important;
+            }
+            .mobile-scaled-padding {
+                padding: 0.75rem !important;
+            }
+            .mobile-scaled-card-h {
+                height: 160px !important;
+            }
+            .mobile-scaled-icon {
+                font-size: 1rem !important;
+            }
+            .mobile-scaled-hero-title {
+                font-size: 1.75rem !important;
+            }
+            .mobile-scaled-audio-row {
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+            .mobile-scaled-contact-row {
+                gap: 0.75rem !important;
+            }
+            .mobile-scaled-footer-row {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="fixed top-0 w-full z-40 backdrop-blur-md border-outline-variant transition-all">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-4">
+<div class="text-sm md:text-body-lg font-headline-lg font-bold text-on-surface whitespace-nowrap">Frishta M. Khder</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#work">Work</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#audio">Podcast</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#videos">Motion</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#certificates">Certificates</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#contact">Contact</a>
+</nav>
+<button class="bg-tertiary text-on-tertiary px-4 md:px-6 py-2 rounded-lg font-label-sm text-[10px] md:text-label-sm hover:scale-95 transition-all">Resume</button>
+</div>
+</header>
+<main class="pt-20">
+
+<!-- Hero Section -->
+<section class="bg-obsidian min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center px-margin-mobile md:px-gutter py-12 md:py-24 text-center section-divider">
+<div class="max-w-4xl mx-auto space-y-4 md:space-y-6 animate-fade">
+<h1 class="mobile-scaled-hero-title md:text-display-xl font-bold text-on-surface">Frishta Mustafa Khder</h1>
+<p class="font-label-sm text-xs md:text-label-sm text-tertiary/60">Born: 2004</p>
+<p class="text-sm md:text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+    UI/UX &amp; Graphic Designer with a background in Mathematics, bridging technical logic with creative design. Expert in crafting precision-driven digital experiences, content creation, and interactive storytelling.
+</p>
+<div class="flex flex-row justify-center gap-4 pt-4 md:pt-8">
+<a class="bg-tertiary text-on-tertiary px-4 md:px-10 py-2 md:py-4 rounded-lg font-label-sm text-[10px] md:text-label-sm hover:opacity-90 transition-all flex items-center gap-2" href="#contact">
+    Get in Touch <span class="material-symbols-outlined text-[10px] md:text-sm">mail</span>
+</a>
+<a class="border border-outline-variant text-on-surface px-6 py-3 rounded-full hover:bg-surface-variant transition-all duration-300" href="resume.pdf" target="_blank">
+    Resume
+</a>
+</div>
+</div>
+</section>
+
+<!-- Graphic & Visual Design Section -->
+<section class="bg-obsidian px-margin-mobile md:px-gutter py-12 md:py-24 section-divider" id="work">
+<div class="max-w-container-max mx-auto">
+<div class="mb-8 md:mb-12">
+<h2 class="font-headline-md text-xl md:text-headline-md text-on-surface">Graphic &amp; Visual Design</h2>
+<p class="text-tertiary/70 text-[10px] md:text-sm mt-2 font-label-sm">All designs created using Figma with interactive prototype capability.</p>
+</div>
+<div class="mobile-scaled-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+
+<!-- Card 1: Beverage Design Series -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('beverage', 0)">
+<img alt="Beverage Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="22.PNG"/>
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+<div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+<h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Beverage Design Series</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+</div>
+</div>
+</div>
+
+<!-- Card 2: Print & Typography -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('print', 0)">
+<img alt="Print Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="6.png"/>
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+<div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+<h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Print &amp; Typography</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+</div>
+</div>
+</div>
+
+<!-- Card 3: Heritage Visual Study -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('artwork', 0)">
+<img alt="Visual Artwork" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzYYAT2VNsNzth-c_PV74Q7fg3CG9Ym1JKAgr4ypHYVTlRcZ-i5QmjtN1wWnv470UiuwKFoBVKSFi7_VXOxDdI4nwtbTbzKfzuHykTHH3iBSxK3bmRgw5P3fJX-eNc0bfc-0vQhPIuIRevFquXeyECHCQmJM86TQ82tp8D_vs6dQRylF_NsmvsbwNItaM1BjbEYU4bdVbAkj_6jPuTXN9cmcyNI9LSWfGT-a6NMVKmhHRlG3KmYAkVV7ZgnleHlkv1YU0"/>
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+<div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+<h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Heritage Visual Study</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+</div>
+</div>
+</div>
+
+<!-- Card 4: Menu Design Campaign -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('salad_restaurant', 0)">
+  <img alt="Menu Design Campaign" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="1.png"/>
+  <div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+  <div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+    <h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Menu Design Campaign</h3>
+    <div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+      <span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+    </div>
+  </div>
+</div>
+
+</div></div>
+</section>
+
+<!-- Audio / Podcast Section -->
+<section class="bg-obsidian px-margin-mobile md:px-gutter py-12 md:py-24 section-divider" id="audio">
+  <div class="max-w-container-max mx-auto">
+    <div class="bg-surface-container border border-outline-variant rounded-2xl p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 shadow-xl">
+      <div class="w-full md:w-1/2 space-y-3 md:space-y-4">
+        <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium text-xs tracking-wider uppercase">
+          FEATURED PODCAST
+        </div>
+        <h2 class="text-xl md:text-3xl font-bold text-white tracking-tight">
+          Audio Production &amp; Tech Updates
+        </h2>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          I produced daily audio podcasts and voice-over news updates for a tech website platform, delivering clear information and technical insights directly to listeners.
+        </p>
+        <div class="pt-4 max-w-md">
+          <audio id="cleanAudio" preload="metadata" src="audio.mp3"></audio>
+          <div class="bg-slate-900/90 border border-slate-700/60 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+            <button class="w-9 h-9 rounded-full bg-white text-slate-900 flex items-center justify-center font-bold hover:scale-105 transition-all flex-shrink-0 shadow" id="cleanPlayBtn" type="button">
+              <span class="material-symbols-outlined text-lg" id="cleanPlayIcon">play_arrow</span>
+            </button>
+            <span class="text-xs font-mono text-white min-w-[30px]" id="cleanCurrent">0:00</span>
+            <input class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-white hover:accent-slate-200" id="cleanSeek" max="100" min="0" type="range" value="0"/>
+            <span class="text-xs font-mono text-slate-400 min-w-[30px]" id="cleanDuration">0:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 flex justify-center">
+        <div class="relative w-32 h-32 md:w-56 md:h-56 rounded-full bg-gradient-to-tr from-slate-800 to-blue-900/40 border border-slate-700 flex items-center justify-center overflow-hidden shadow-inner group">
+          <div class="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all"></div>
+          <span class="material-symbols-outlined text-blue-400 text-4xl md:text-6xl animate-pulse z-10">podcasts</span>
+          <div class="absolute inset-0 border-2 md:border-4 border-dashed border-blue-500/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Showcase / Motion Graphics -->
+<section class="bg-slate-tint px-margin-mobile md:px-gutter py-12 md:py-24 section-divider" id="videos">
+  <div class="max-w-container-max mx-auto">
+    <div class="mb-8 md:mb-12 text-center">
+      <h2 class="font-headline-md text-on-surface text-xl md:text-headline-md">Video &amp; Motion Graphics</h2>
+      <p class="text-tertiary text-[10px] md:text-sm mt-2 md:mt-4 max-w-2xl mx-auto font-label-sm leading-relaxed">
+        "These are not traditional videos, but rather recorded prototypes and motion demos showcasing UI/UX designs, app interactions, and website layouts."
+      </p>
+    </div>
+
+    <!-- ROW 1: Vertical Videos -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video1.mov" type="video/quicktime"/>
+          <source src="video1.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video2.mov" type="video/quicktime"/>
+          <source src="video2.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video3.mov" type="video/quicktime"/>
+          <source src="video3.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="reklam4.mov" type="video/quicktime"/>
+          <source src="reklam4.mp4" type="video/mp4"/>
+        </video>
+      </div>
+    </div>
+
+    <!-- ROW 2 & 3: Horizontal & Extra Vertical Videos -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="aspect-video bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-cover bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video5.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-video bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-cover bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video6.mp4" type="video/quicktime"/>
+          <source src="video6.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-video bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-cover bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video7.mp4" type="video/quicktime"/>
+          <source src="video7.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-video bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-cover bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="video8.mp4" type="video/quicktime"/>
+          <source src="video8.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
+        <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
+          <source src="reklam.vizar.brand9.mov" type="video/quicktime"/>
+          <source src="reklam.vizar.brand9.mp4" type="video/mp4"/>
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section class="bg-slate-tint px-margin-mobile md:px-gutter py-12 md:py-24 section-divider" id="certificates">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-md text-on-surface mb-8 md:mb-12 text-xl md:text-headline-md">Certificates &amp; Qualifications</h2>
+<div class="space-y-2 md:space-y-4">
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl border border-outline-variant/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-surface-container-high transition-all" onclick="toggleCert('cert1')">
+<div class="text-left">
+<h3 class="font-bold text-sm md:text-on-surface">Scientific Poster Award</h3>
+<p class="text-[10px] md:text-sm text-on-surface-variant">Salahaddin University-Erbil • April 2023</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg md:text-2xl transition-transform" id="icon-cert1">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 border-t border-outline-variant/20 bg-surface-container-low animate-fade" id="cert1">
+<img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD8zUp4P8cHltoVNEJ_yDnPLINuB2ixENb3_NbENO2TRR3VuU5IlbtzcEi6nJyWPtKIAO0dIdExPC_po6yg-jbQAu23AFaLZ2uaYTtmTJ-KaUa7Bw6rIJbnycfRWBycCckLxR5PeF5wsCtAaac-Thue_husjMgLVFBHK3uWq0As-cy02RKC_bUuMao90-96alHpLfrwcRWNyBopOuSTP1-ab7YVHE4ba_5M9sttRTymtfO3mZdkxtKvSNYrpbN6MkzOdI"/>
+</div>
+</div>
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl border border-outline-variant/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-surface-container-high transition-all" onclick="toggleCert('cert2')">
+<div class="text-left">
+<h3 class="font-bold text-sm md:text-on-surface">English Conversation Club Season 9</h3>
+<p class="text-[10px] md:text-sm text-on-surface-variant">American Corner Erbil • April 2023</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg md:text-2xl transition-transform" id="icon-cert2">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 border-t border-outline-variant/20 bg-surface-container-low animate-fade" id="cert2">
+<img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4qG3DCj8YrAjUjuO4fqpOlhqdMT3FVEmug_XLwSHUM2GMmI2bYnRMxJ0aj91wamgLwRoNn46xLKbJAsZQhcnJvxnvHWKyECRKhiLDMtjpB2p3lRny8R0NtAdcOSjFaeoyo3Lytzkbud1afnVLp2Po-_S7WleHdVmmwwLUywWGXQO-E3cn9gH0HVJwUhvY52zHVv6epXTp3Vb040JToCYPwsZ610b6QF17Q7AwB_xJNXhGIVM58FICFdeLhAgePpWEjaI"/>
+</div>
+</div>
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl border border-outline-variant/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-surface-container-high transition-all" onclick="toggleCert('cert3')">
+<div class="text-left">
+<h3 class="font-bold text-sm md:text-on-surface">Photography and Videography Club</h3>
+<p class="text-[10px] md:text-sm text-on-surface-variant">American Corner Erbil • January 2024</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg md:text-2xl transition-transform" id="icon-cert3">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 border-t border-outline-variant/20 bg-surface-container-low animate-fade" id="cert3">
+<img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQPv_T4cVHnSsIqS1XPosvmROVIc4-c6ZdjtOBg_DUadsXzoOBNzOHIg8hpy4wo3Fx6IcGSCeSZ_8QiF4heioLsKhuSPbIVk67kTpdNy_ipzFrKjtqpuc3K3DRXpwfUDbDwq-qx8WBfMldkdGIuO5vKs2R3piN6-bd7J2j-lndorH-KuKNUyszPHNFAOEc0r1NaNMHJGf79Ggpkp-9pW5jzEgkGizupWRdl26SMsv4fcEZsPxXV7iqJ7HeYhKTKC9XC2w"/>
+</div>
+</div>
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl border border-outline-variant/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-surface-container-high transition-all" onclick="toggleCert('cert4')">
+<div class="text-left">
+<h3 class="font-bold text-sm md:text-on-surface">English Language Skills &amp; Grammar</h3>
+<p class="text-[10px] md:text-sm text-on-surface-variant">UKH Library • December 2023</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg md:text-2xl transition-transform" id="icon-cert4">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 border-t border-outline-variant/20 bg-surface-container-low animate-fade" id="cert4">
+<img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1FhNuVhYmpLWs8JRWe1GT0uMQzZXdzXOjIUXKEAHqgqvYLNtHHmrQbixMkSv7_0oTYW9LrwPP1jS76rCiv-6EdFmWeStiH9GS-jDZeq0u-vhvIrG4konVGxxLaab24X-qFAjRtPybwDO9HEmMqOlX3KgG4ic8TlVXXOcMsjwXivF269bCUoHHvEmGcPEIo9DC2MeOPWwOrQ6cM_jIrVFgIr6XCb6A7MV8eV9QPCoDOyndl7zt6lDFPEW5ZxDVRxzMspo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-obsidian px-margin-mobile md:px-gutter py-12 md:py-24 pb-20 md:pb-32" id="contact">
+<div class="max-w-container-max mx-auto">
+<div class="bg-surface-container/40 backdrop-blur-sm border border-outline-variant/30 rounded-2xl p-6 md:p-16 text-center">
+<h2 class="text-xl md:text-headline-lg text-on-surface mb-6 md:mb-8">Let's build something exceptional.</h2>
+<div class="mobile-scaled-contact-row flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12 mt-6 md:mt-10">
+<a class="flex items-center gap-2 md:gap-4 group" href="mailto:frishtamstafa9@gmail.com">
+<div class="w-8 h-8 md:w-14 md:h-14 rounded-full bg-surface-variant/50 flex items-center justify-center border border-outline-variant group-hover:border-tertiary transition-all">
+<span class="material-symbols-outlined text-tertiary text-sm md:text-xl">mail</span>
+</div>
+<span class="text-xs md:text-body-md text-on-surface font-medium">frishtamstafa9@gmail.com</span>
+</a>
+<a class="flex items-center gap-2 md:gap-4 group" href="https://www.instagram.com/designer_work_by_frishta?igsi=ZDRsa2Y1cHN3NGRr&amp;utm_source=qr" target="_blank">
+<div class="w-8 h-8 md:w-14 md:h-14 rounded-full bg-surface-variant/50 flex items-center justify-center border border-outline-variant group-hover:border-tertiary transition-all">
+<span class="material-symbols-outlined text-tertiary text-sm md:text-xl">camera_alt</span>
+</div>
+<span class="text-xs md:text-body-md text-on-surface font-medium">@designer_work_by_frishta</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- Unified Gallery/Lightbox Modal -->
+<div class="modal items-center justify-center p-4 md:p-12" id="galleryModal">
+<button class="absolute top-6 right-6 text-on-surface hover:text-tertiary transition-colors z-[110]" onclick="closeModal()" type="button">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="w-full max-w-5xl flex items-center justify-between gap-4">
+<button class="text-on-surface hover:text-tertiary transition-colors p-2" id="prevBtn" onclick="changeSlide(-1)" type="button">
+<span class="material-symbols-outlined text-4xl md:text-5xl">chevron_left</span>
+</button>
+<div class="relative w-full max-h-[80vh] flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl animate-fade" id="modalImg" src=""/>
+</div>
+<button class="text-on-surface hover:text-tertiary transition-colors p-2" id="nextBtn" onclick="changeSlide(1)" type="button">
+<span class="material-symbols-outlined text-4xl md:text-5xl">chevron_right</span>
+</button>
+</div>
+</div>
+
+<script>
+    const collections = {
+        beverage: {
+            title: "Beverage Design Series",
+            images: [
+                "11.PNG",
+                "22.PNG",
+                "33.PNG"
+            ]
+        },
+        print: {
+            title: "Print & Typography Projects",
+            images: [
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png",
+                "10.png"
+            ]
+        },
+        artwork: {
+            title: "Visual Artwork",
+            images: [
+                "https://lh3.googleusercontent.com/aida-public/AB6AXuA97TELt6BWgUBm8jRYQXiHhKAi1PSBwRqwPzMNPbPOp1rrcEteA1Jod5svVY5HhBnH8qwocJHl0AMr9g3qPuP19m6WrZW04scFtrlFw8slVNgtin8QjIlpuQYKViChNE_wuH745nwz3LWEJlXQO_uaWCF7z8UyiUWUPmu01KvC80_aXN8WBg-TyNvsvbsP9gyqU_BgPbRQNrI-H4hizOjnaZ3mcgOFVednKnjnscPx-FCcYLifEQOlZzRN3_I59XA3ih8"
+            ]
+        },
+        salad_restaurant: {
+            title: "Menu Design Campaign",
+            images: [
+                "1.png",
+                "2.png",
+                "3.png",
+                "4.png",
+                "5.png"
+            ]
+        }
+    };
+
+    let currentGallery = [];
+    let currentSlide = 0;
+
+    function openLightbox(collectionName, index) {
+        const collection = collections[collectionName];
+        if (!collection) return;
+        currentGallery = collection.images;
+        currentSlide = index;
+        updateModal();
+        const modal = document.getElementById('galleryModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('galleryModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function updateModal() {
+        const img = document.getElementById('modalImg');
+        const prev = document.getElementById('prevBtn');
+        const next = document.getElementById('nextBtn');
+        
+        img.src = currentGallery[currentSlide];
+        
+        if (currentGallery.length <= 1) {
+            prev.style.visibility = 'hidden';
+            next.style.visibility = 'hidden';
+        } else {
+            prev.style.visibility = 'visible';
+            next.style.visibility = 'visible';
+        }
+    }
+
+    function changeSlide(dir) {
+        currentSlide = (currentSlide + dir + currentGallery.length) % currentGallery.length;
+        updateModal();
+    }
+
+    function toggleCert(id) {
+        const el = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+        if (el.classList.contains('hidden')) {
+            el.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            el.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('cleanAudio');
+        const playBtn = document.getElementById('cleanPlayBtn');
+        const playIcon = document.getElementById('cleanPlayIcon');
+        const seek = document.getElementById('cleanSeek');
+        const current = document.getElementById('cleanCurrent');
+        const duration = document.getElementById('cleanDuration');
+
+        function fmtTime(s) {
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        if (playBtn && audio) {
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.textContent = 'pause';
+                } else {
+                    audio.pause();
+                    playIcon.textContent = 'play_arrow';
+                }
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                seek.max = Math.floor(audio.duration);
+                duration.textContent = fmtTime(audio.duration);
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                seek.value = Math.floor(audio.currentTime);
+                current.textContent = fmtTime(audio.currentTime);
+            });
+
+            seek.addEventListener('input', () => {
+                audio.currentTime = seek.value;
+            });
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+        if (document.getElementById('galleryModal').classList.contains('active')) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        }
+    });
+</script>
+</body>
+</html>
