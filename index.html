@@ -208,7 +208,7 @@
 <a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#certificates">Certificates</a>
 <a class="text-on-surface-variant hover:text-tertiary transition-colors font-label-sm text-label-sm" href="#contact">Contact</a>
 </nav>
-<button class="bg-tertiary text-on-tertiary px-4 md:px-6 py-2 rounded-lg font-label-sm text-[10px] md:text-label-sm hover:scale-95 transition-all">Resume</button>
+<button class="bg-tertiary text-on-tertiary px-4 md:px-6 py-2 rounded-lg font-label-sm text-[10px] md:text-label-sm hover:scale-95 transition-all" onclick="openCvModal()" type="button">cv</button>
 </div>
 </header>
 <main class="pt-20">
@@ -225,11 +225,11 @@
 <a class="bg-tertiary text-on-tertiary px-4 md:px-10 py-2 md:py-4 rounded-lg font-label-sm text-[10px] md:text-label-sm hover:opacity-90 transition-all flex items-center gap-2" href="#contact">
     Get in Touch <span class="material-symbols-outlined text-[10px] md:text-sm">mail</span>
 </a>
-<a class="border border-outline-variant text-on-surface px-6 py-3 rounded-full hover:bg-surface-variant transition-all duration-300" href="resume.pdf" target="_blank">
-    Resume
-</a>
+<button class="border border-outline-variant text-on-surface px-6 py-3 rounded-full hover:bg-surface-variant transition-all duration-300" onclick="openCvModal()" type="button">
+    cv
+</button>
 </div>
-</div>
+</div>    
 </section>
 
 <!-- Graphic & Visual Design Section -->
@@ -277,19 +277,49 @@
 </div>
 </div>
 
-<!-- Card 4: Menu Design Campaign -->
+<!-- Card 4: Design post instagram  -->
 <div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('salad_restaurant', 0)">
-  <img alt="Menu Design Campaign" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="1.png"/>
+  <img alt="Design post instagram" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="1.png"/>
   <div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
   <div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
-    <h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Menu Design Campaign</h3>
+    <h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Design post instagram</h3>
+    <div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+      <span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Second Row: Menu Design Examples (same style as above) -->
+<div class="mobile-scaled-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-4 md:mt-8">
+
+<!-- Card 5: Salad Menu Design (Tamzar) -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('menu_salad_tamzar', 0)">
+  <img alt="Salad Menu Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="cover9.png"/>
+  <div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+  <div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+    <h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Tamzar Salad Menu</h3>
     <div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
       <span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
     </div>
   </div>
 </div>
 
-</div></div>
+<!-- Card 6: Coffee Menu Design (Tamzar) -->
+<div class="group cursor-pointer project-card relative overflow-hidden rounded-xl border border-outline-variant/30 mobile-scaled-card-h md:h-64" onclick="openLightbox('menu_coffee_tamzar', 0)">
+  <img alt="Coffee Menu Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="b1.png"/>
+  <div class="absolute inset-0 bg-surface/40 backdrop-blur-sm group-hover:backdrop-blur-none transition-all pointer-events-none"></div>
+  <div class="absolute inset-0 flex flex-col justify-end mobile-scaled-padding md:p-6 bg-gradient-to-t from-surface via-surface/20 to-transparent pointer-events-none">
+    <h3 class="mobile-scaled-h3 md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">Tamzar Coffee Menu</h3>
+    <div class="flex items-center gap-1 text-tertiary font-label-sm text-[8px] md:text-xs uppercase tracking-widest">
+      <span class="material-symbols-outlined mobile-scaled-icon md:text-sm">explore</span> Explore
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
 </section>
 
 <!-- Audio / Podcast Section -->
@@ -394,8 +424,8 @@
       </div>
       <div class="aspect-[4/3] max-h-[260px] bg-black border border-outline-variant/50 rounded-lg overflow-hidden relative cursor-pointer group">
         <video class="w-full h-full object-contain bg-black" controls="" onclick="if(this.requestFullscreen){this.requestFullscreen();}else if(this.webkitRequestFullscreen){this.webkitRequestFullscreen();}" preload="metadata">
-          <source src="reklam.mov" type="video/quicktime"/>
-          <source src="reklam.mp4" type="video/mp4"/>
+          <source src="reklam.vizar.brand9.mov" type="video/quicktime"/>
+          <source src="reklam.vizar.brand9.mp4" type="video/mp4"/>
         </video>
       </div>
     </div>
@@ -455,6 +485,18 @@
 <img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1FhNuVhYmpLWs8JRWe1GT0uMQzZXdzXOjIUXKEAHqgqvYLNtHHmrQbixMkSv7_0oTYW9LrwPP1jS76rCiv-6EdFmWeStiH9GS-jDZeq0u-vhvIrG4konVGxxLaab24X-qFAjRtPybwDO9HEmMqOlX3KgG4ic8TlVXXOcMsjwXivF269bCUoHHvEmGcPEIo9DC2MeOPWwOrQ6cM_jIrVFgIr6XCb6A7MV8eV9QPCoDOyndl7zt6lDFPEW5ZxDVRxzMspo"/>
 </div>
 </div>
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl border border-outline-variant/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-surface-container-high transition-all" onclick="toggleCert('cert5')">
+<div class="text-left">
+<h3 class="font-bold text-sm md:text-on-surface">Process of Data Collection in Scientific Research</h3>
+<p class="text-[10px] md:text-sm text-on-surface-variant">Ibn Sina Center for Training and Development &bull; Summer 2026</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg md:text-2xl transition-transform" id="icon-cert5">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 border-t border-outline-variant/20 bg-surface-container-low animate-fade" id="cert5">
+<img alt="Certificate" class="max-w-full md:max-w-3xl mx-auto rounded shadow-2xl" src="certificate-data-collection.png"/>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -502,7 +544,48 @@
 </div>
 </div>
 
+<!-- CV Language Choice Modal -->
+<div class="modal items-center justify-center p-4" id="cvChoiceModal">
+<button class="absolute top-6 right-6 text-on-surface hover:text-tertiary transition-colors z-[110]" onclick="closeCvModal()" type="button">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="bg-surface-container border border-outline-variant rounded-xl p-8 md:p-12 flex flex-col items-center gap-6 max-w-sm w-full text-center animate-fade">
+<h3 class="font-headline-md text-lg md:text-headline-md text-on-surface">Choose CV Language</h3>
+<div class="flex flex-col sm:flex-row gap-4 w-full">
+<button class="flex-1 bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-all" onclick="selectCv('en')" type="button">English</button>
+<button class="flex-1 border border-outline-variant text-on-surface px-6 py-3 rounded-lg font-label-sm text-label-sm hover:bg-surface-variant transition-all" onclick="selectCv('kr')" type="button">کوردی</button>
+</div>
+</div>
+</div>
+
 <script>
+    const cvImages = {
+        en: "cve.png",
+        kr: "cvkrd.png"
+    };
+
+    function openCvModal() {
+        const modal = document.getElementById('cvChoiceModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCvModal() {
+        const modal = document.getElementById('cvChoiceModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function selectCv(lang) {
+        closeCvModal();
+        currentGallery = [cvImages[lang]];
+        currentSlide = 0;
+        updateModal();
+        const modal = document.getElementById('galleryModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
     const collections = {
         beverage: {
             title: "Beverage Design Series",
@@ -537,8 +620,34 @@
                 "4.png",
                 "5.png"
             ]
-        }
-    };
+        },
+        menu_salad_tamzar: {
+        title: "Tamzar Salad Menu",
+        images: [
+            "cover9.png",
+            "a11.png",
+            "a12.png",
+            "a13.png",
+            "a14.png",
+            "a15.png",
+            "a16.png",
+            "a17.png",
+            "a18.png",
+            "a19.png"
+        ]
+    },
+   menu_coffee_tamzar: {
+        title: "Tamzar Coffee Menu",
+        images: [
+            "b1.png",
+            "b2.png",
+            "b3.png",
+            "b4.png",
+            "b5.png",
+           
+        ]
+    }
+};     
 
     let currentGallery = [];
     let currentSlide = 0;
